@@ -1,0 +1,12 @@
+services:
+  db:
+    image: postgres:latest
+    container_name: db-application
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: eventHub
+    volumes:
+      - ./data:/var/lib/postgresql/data
+    ports:
+      - "5431:5432"

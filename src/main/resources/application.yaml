@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: "EventHub"
+  datasource:
+    url: "jdbc:postgresql://localhost:5431/eventHub"
+    username: "postgres"
+    password: "admin"
+  flyway:
+    enabled: false
+logging:
+  level:
+    org:
+      flywaydb: debug
