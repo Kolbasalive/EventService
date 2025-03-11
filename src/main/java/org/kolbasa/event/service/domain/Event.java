@@ -14,6 +14,12 @@ import lombok.ToString;
 import java.time.LocalDateTime;
 import java.util.List;
 
+/**
+ * Событие или мероприятие.
+ * <p>
+ * Содержит информацию о событии, такую как название, описание, место проведения, дату и другие параметры.
+ * Также включает связь с рецензиями на это событие.
+ */
 @Getter
 @Setter
 @ToString

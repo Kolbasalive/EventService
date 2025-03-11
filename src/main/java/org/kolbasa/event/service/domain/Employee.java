@@ -11,6 +11,11 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+/**
+ * Любой пользователь eventHub.
+ * <p>
+ * Содержит информацию о сотруднике, такую как имя, email, логин и роль.
+ * */
 @Getter
 @Setter
 @ToString
