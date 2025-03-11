@@ -27,8 +27,8 @@ public class Review {
     private Integer rating;
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
+    @JoinColumn(name = "employee_id")
+    private Employee employee;
 
     @ManyToOne
     @JoinColumn(name = "event_id")

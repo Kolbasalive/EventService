@@ -9,10 +9,10 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication(exclude = SecurityAutoConfiguration.class)
 @ComponentScan(basePackages = "org.kolbasa.event.service")
-@EntityScan(basePackages = "org.kolbasa.eventhub.domain")
+@EntityScan(basePackages = "org.kolbasa.event.service.domain")
 @EnableJpaRepositories(basePackages = "org.kolbasa.event.service.adapter.persistent")
-public class EventHubApplication {
+public class EventServiceApplication {
     public static void main(String[] args) {
-        SpringApplication.run(EventHubApplication.class, args);
+        SpringApplication.run(EventServiceApplication.class, args);
     }
 }

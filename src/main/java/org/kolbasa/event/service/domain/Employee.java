@@ -1,6 +1,8 @@
 package org.kolbasa.event.service.domain;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -13,12 +15,15 @@ import lombok.ToString;
 @Setter
 @ToString
 @Entity
-public class User {
+public class Employee {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_generator")
-    @SequenceGenerator(name = "user_generator" , sequenceName = "user_sequence", allocationSize = 1)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "employee_generator")
+    @SequenceGenerator(name = "employee_generator" , sequenceName = "employee_sequence", allocationSize = 1)
+    private Long employeeId;
     private String name;
     private String email;
     private String login;
+
+    @Enumerated(EnumType.STRING)
+    private Role role;
 }

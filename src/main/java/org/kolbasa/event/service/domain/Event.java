@@ -24,8 +24,10 @@ public class Event {
     @SequenceGenerator(name = "event_generator", sequenceName = "event_sequence", allocationSize = 1)
     private Long eventId;
     private String title;
+    private String category;
     private String description;
     private String location;
+    private Double avgRating;
     private Integer maxUserSize;
     private LocalDateTime eventDate;
     private Long organizationId;

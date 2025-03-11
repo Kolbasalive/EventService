@@ -5,9 +5,26 @@ spring:
     url: "jdbc:postgresql://localhost:5431/eventHub"
     username: "postgres"
     password: "admin"
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+#        jdbc:
+#          lob:
+#            non_contextual_creation: true
+        format_sql: true
   flyway:
-    enabled: false
+    locations: classpath:db/migration
+    user: "postgres"
+    password: "admin"
+    enabled: true
 logging:
   level:
     org:
-      flywaydb: debug
+#      springframework: DEBUG
+#      hibernate.SQL: DEBUG
+      flywaydb: DEBUG
+
+

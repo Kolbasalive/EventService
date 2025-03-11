@@ -1,13 +1,7 @@
 package org.kolbasa.event.service.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-
-import java.time.LocalDate;
-
+//TODO Возможно понадобится для резервации
+/*
 @Getter
 @Setter
 @ToString
@@ -18,3 +12,4 @@ public class Reservation {
     private LocalDate startDate;
     private LocalDate endDate;
 }
+*/
