@@ -1,4 +1,4 @@
-package org.kolbasa.event.service.adapter.event.dto;
+package org.kolbasa.event.service.app.api.event.dto;
 
 import lombok.Data;
 import org.kolbasa.event.service.domain.Review;
@@ -8,7 +8,7 @@ import java.util.List;
 
 @Data
 public class EventDto {
-    private String eventId;
+    private Long eventId;
     private String title;
     private String category;
     private String description;

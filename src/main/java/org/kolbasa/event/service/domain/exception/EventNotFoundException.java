@@ -1,4 +1,4 @@
-package org.kolbasa.event.service.app.impl.exception;
+package org.kolbasa.event.service.domain.exception;
 
 import static java.lang.String.format;
 

@@ -1,4 +1,4 @@
-package org.kolbasa.event.service;
+package org.kolbasa.event.service.fw;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

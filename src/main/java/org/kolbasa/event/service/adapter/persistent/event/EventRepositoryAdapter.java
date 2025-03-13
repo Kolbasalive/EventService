@@ -21,4 +21,9 @@ public class EventRepositoryAdapter implements EventRepository {
     public Optional<Event> findById(Long id) {
         return eventJpaRepository.findById(id);
     }
+
+    @Override
+    public void delete(Event event) {
+        eventJpaRepository.delete(event);
+    }
 }

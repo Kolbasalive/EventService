@@ -1,7 +1,8 @@
-package org.kolbasa.event.service.adapter.event.mapper;
+package org.kolbasa.event.service.app.api.event.mapper;
 
-import org.kolbasa.event.service.adapter.event.dto.EventDto;
-import org.kolbasa.event.service.adapter.event.dto.ResponseDto;
+import org.kolbasa.event.service.app.api.event.dto.EventDto;
+import org.kolbasa.event.service.app.api.event.dto.ResponseDto;
+import org.kolbasa.event.service.app.api.event.dto.ResponseEventDto;
 import org.kolbasa.event.service.domain.Event;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -12,4 +13,5 @@ public interface EventMapper {
     @Mapping(source = "eventId", target = "response")
     ResponseDto eventToResponseDto(Event event);
     EventDto eventDtoToEvent(Event event);
+    ResponseEventDto responseEventDtoToEvent(Event event);
 }
