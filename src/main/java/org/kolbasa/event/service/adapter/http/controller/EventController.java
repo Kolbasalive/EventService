@@ -1,4 +1,4 @@
-package org.kolbasa.event.service.adapter.rest;
+package org.kolbasa.event.service.adapter.http.controller;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
