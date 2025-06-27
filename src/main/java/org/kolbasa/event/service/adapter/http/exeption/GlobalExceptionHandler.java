@@ -5,7 +5,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.kolbasa.event.service.adapter.http.dto.ErrorResponseDto;
 import org.kolbasa.event.service.domain.exception.EventNotFoundException;
 import org.kolbasa.event.service.domain.exception.InvalidEventTimeException;
+import org.kolbasa.event.service.domain.exception.JwtValidationException;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -23,7 +25,7 @@ public class GlobalExceptionHandler {
     @ResponseBody
     public ErrorResponseDto handleInvalidEventTimeException(InvalidEventTimeException exception, HttpServletRequest request) {
         LOGGER.error(EVENT_EXCEPTION_MESSAGE, exception.getMessage());
-        return handle(exception, request, HttpStatus.BAD_REQUEST);
+        return createErrorResponseDto(exception, request, HttpStatus.BAD_REQUEST);
     }
 
     @ExceptionHandler(EventNotFoundException.class)
@@ -31,14 +33,14 @@ public class GlobalExceptionHandler {
     @ResponseBody
     public ErrorResponseDto handleEventNotFoundException(EventNotFoundException exception, HttpServletRequest request) {
         LOGGER.error(EVENT_EXCEPTION_MESSAGE, exception.getMessage());
-        return handle(exception, request, HttpStatus.NOT_FOUND);
+        return createErrorResponseDto(exception, request, HttpStatus.NOT_FOUND);
     }
 
     // ===================================================================================================================
     // = Implementation
     // ===================================================================================================================
 
-    private ErrorResponseDto handle(Throwable exception, HttpServletRequest request, HttpStatus httpStatus) {
+    private ErrorResponseDto createErrorResponseDto(Throwable exception, HttpServletRequest request, HttpStatus httpStatus) {
         return new ErrorResponseDto(
                 exception.getMessage(),
                 request.getRequestURI(),

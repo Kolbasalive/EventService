@@ -1,0 +1,7 @@
+-- CREATE SEQUENCE IF NOT EXISTS token_sequence START WITH 1 INCREMENT BY 1;
+
+CREATE TABLE IF NOT EXISTS refresh_token
+(
+    user_id    BIGINT PRIMARY KEY,
+    token      VARCHAR(255)
+)

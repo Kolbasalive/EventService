@@ -20,9 +20,9 @@ public class GetReviewForEventUseCase implements GetReviewForEventInbound {
 
     @Override
     public List<ResponseReviewDto> execute(Long eventId) {
-        Event a = eventRepository.findById(eventId)
+        Event event = eventRepository.findById(eventId)
                 .orElseThrow(() -> new EventNotFoundException(eventId));
-        List<Review> reviews = a.getReviews();
+        List<Review> reviews = event.getReviews();
 
         return reviews.stream()
                 .map(reviewMapper::reviewToResponseReviewDto)

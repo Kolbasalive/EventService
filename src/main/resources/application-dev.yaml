@@ -1,0 +1,58 @@
+spring:
+  application:
+    name: "EventHub"
+  datasource:
+    url: "jdbc:postgresql://localhost:5431/eventHub"
+    username: "postgres"
+    password: "admin"
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+#        jdbc:
+#          lob:
+#            non_contextual_creation: true
+#        format_sql: true
+#  security:
+#    user:
+#      name: admin
+#      password: admin
+  kafka:
+    bootstrap-servers: localhost:29092
+    consumer:
+      group-id: notification-service
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+  flyway:
+    locations: classpath:db/migration
+    user: "postgres"
+    password: "admin"
+    enabled: true
+logging:
+  level:
+    org:
+      springframework:
+        security:
+          web: DEBUG
+#      hibernate.SQL: DEBUG
+#      flywaydb: DEBUG
+
+app:
+  kafka:
+    topic:
+      events: new-events-topic
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always

@@ -5,6 +5,7 @@ import org.kolbasa.event.service.app.api.repository.EventRepository;
 import org.kolbasa.event.service.domain.Event;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Optional;
 
 @Repository
@@ -25,5 +26,10 @@ public class EventRepositoryAdapter implements EventRepository {
     @Override
     public void delete(Event event) {
         eventJpaRepository.delete(event);
+    }
+
+    @Override
+    public List<Event> findAll() {
+        return eventJpaRepository.findAll();
     }
 }

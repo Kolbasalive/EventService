@@ -16,7 +16,7 @@ class EventMapperTest {
     private final EventMapper eventMapper = Mappers.getMapper(EventMapper.class);
 
     @Test
-    void shouldMapEventDtoToEvent() {
+    void shouldMapEventToEventDto() {
         // Given
         EventDto eventDto = new EventDto();
         eventDto.setEventId(1L);
@@ -60,7 +60,7 @@ class EventMapperTest {
     }
 
     @Test
-    void shouldMapEventToEventDto() {
+    void shouldMapEventDtoToEvent() {
         // Given
         Event event = new Event();
         event.setEventId(2L);

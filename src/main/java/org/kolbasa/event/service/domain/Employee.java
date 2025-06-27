@@ -28,6 +28,7 @@ public class Employee {
     private String name;
     private String email;
     private String login;
+    private String password;
 
     @Enumerated(EnumType.STRING)
     private Role role;

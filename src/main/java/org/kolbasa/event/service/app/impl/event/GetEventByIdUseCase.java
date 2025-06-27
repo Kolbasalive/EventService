@@ -20,6 +20,6 @@ public class GetEventByIdUseCase implements GetEventByIdInbound {
         Event event = eventRepository.findById(id)
                 .orElseThrow(() -> new EventNotFoundException(id));
 
-        return eventMapper.responseEventDtoToEvent(event);
+        return eventMapper.eventToResponseEventDto(event);
     }
 }

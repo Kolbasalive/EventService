@@ -1,0 +1,34 @@
+<configuration>
+
+    <!-- Стандартный формат Spring Boot в консоли -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${CONSOLE_LOG_PATTERN:-%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %logger{36} [%thread] - %msg%n}</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Кастомный файл-аппендер для ваших логов -->
+    <appender name="MY_APP_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>logs/myapp.log</file>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>logs/myapp-%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>14</maxHistory>
+        </rollingPolicy>
+
+        <encoder>
+            <pattern>%d{HH:mm:ss} %-5level %logger{20} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Корневой логгер (оставляем спринговые логи в консоль) -->
+    <root level="INFO">
+        <appender-ref ref="CONSOLE" />
+    </root>
+
+    <!-- Ваши собственные пакеты — логируем в файл -->
+    <logger name="com.yourcompany" level="DEBUG" additivity="false">
+        <appender-ref ref="MY_APP_FILE"/>
+    </logger>
+
+</configuration>

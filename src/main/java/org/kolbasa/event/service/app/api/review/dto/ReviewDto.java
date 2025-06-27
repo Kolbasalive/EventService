@@ -9,6 +9,7 @@ import java.time.LocalDateTime;
 @Data
 @Accessors(chain = true)
 public class ReviewDto {
+    private Long reviewId;
     private String comment;
     private LocalDateTime createdAt;
     private Integer rating;
