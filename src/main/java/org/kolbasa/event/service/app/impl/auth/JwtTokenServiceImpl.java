@@ -1,6 +1,7 @@
 package org.kolbasa.event.service.app.impl.auth;
 
 import lombok.extern.slf4j.Slf4j;
+import org.kolbasa.event.service.app.api.auth.JwtTokenService;
 import org.kolbasa.event.service.app.api.event.dto.JwtEmployee;
 import org.kolbasa.event.service.domain.Employee;
 import org.kolbasa.event.service.domain.exception.JwtValidationException;
@@ -20,8 +21,8 @@ import java.util.Date;
 
 @Service
 @Slf4j
-public class JwtTokenService {
-    private static final Logger log = LoggerFactory.getLogger(JwtTokenService.class);
+public class JwtTokenServiceImpl implements JwtTokenService {
+    private static final Logger log = LoggerFactory.getLogger(JwtTokenServiceImpl.class);
     //TODO Поместить в .env
     private final String ACCESS_TOKEN_SECRET = "superSecretKeyWhichShouldBeVeryLongLONGLONGLONGLONG";
     private final String REFRESH_TOKEN_SECRET = "verySuperSecretKeyWhichShouldBeVeryLongLONGLONGLONGLONG";

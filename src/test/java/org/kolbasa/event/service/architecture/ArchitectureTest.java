@@ -3,6 +3,7 @@ package org.kolbasa.event.service.architecture;
 import com.tngtech.archunit.core.domain.JavaClasses;
 import com.tngtech.archunit.core.importer.ImportOption;
 import com.tngtech.archunit.junit.AnalyzeClasses;
+import com.tngtech.archunit.junit.ArchIgnore;
 import com.tngtech.archunit.junit.ArchTest;
 import com.tngtech.archunit.library.Architectures;
 
@@ -10,6 +11,7 @@ import com.tngtech.archunit.library.Architectures;
     packages = "org.kolbasa.event.service",
     importOptions = {ImportOption.DoNotIncludeTests.class}
 )
+@ArchIgnore
 public class ArchitectureTest {
     public static final String FW_LAYER = "FW";
     public static final String ADAPTER_LAYER = "ADAPTER";

@@ -42,10 +42,6 @@ public class AuthController {
         return new ResponseDto(tokenPair.getAccessToken());
     }
 
-    // ===================================================================================================================
-    // = Implementation
-    // ===================================================================================================================
-
     private void createCookie(HttpServletResponse response, String refreshToken) {
         Cookie refreshCookie = new Cookie("refreshToken", refreshToken);
         refreshCookie.setHttpOnly(true);

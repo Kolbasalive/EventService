@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.kolbasa.event.service.adapter.messaging.dto.EmployeeDetails;
 import org.kolbasa.event.service.adapter.messaging.dto.EventNotificationMessage;
-import org.kolbasa.event.service.app.api.employee.mapper.EmployeeMapper;
+import org.kolbasa.event.service.adapter.http.controller.mapper.EmployeeMapper;
 import org.kolbasa.event.service.app.api.event.dto.EventDto;
 import org.kolbasa.event.service.app.api.event.dto.ResponseDto;
 import org.kolbasa.event.service.app.api.event.mapper.EventMapper;

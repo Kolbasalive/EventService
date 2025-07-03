@@ -1,4 +1,4 @@
-package org.kolbasa.event.service.app.api.employee.mapper;
+package org.kolbasa.event.service.adapter.http.controller.mapper;
 
 import org.kolbasa.event.service.adapter.messaging.dto.EmployeeDetails;
 import org.kolbasa.event.service.domain.Employee;

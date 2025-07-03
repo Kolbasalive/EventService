@@ -15,14 +15,14 @@ import org.springframework.stereotype.Service;
 public class LoginUseCase implements LoginInbound {
     private final TokenRepository tokenRepository;
     private final EmployeeRepository employeeRepository;
-    private final JwtTokenService jwtTokenService;
+    private final JwtTokenServiceImpl jwtTokenServiceImpl;
 
     @Override
     public TokenPair execute(String login, String password) {
         Employee employee = getAndCheckEmployee(login, password);
 
-        String accessToken = jwtTokenService.generateAccessToken(employee);
-        String refreshToken = jwtTokenService.generateRefreshToken(employee);
+        String accessToken = jwtTokenServiceImpl.generateAccessToken(employee);
+        String refreshToken = jwtTokenServiceImpl.generateRefreshToken(employee);
 
         tokenRepository.save(refreshToken, employee.getEmployeeId());
 

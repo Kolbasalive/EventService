@@ -1,4 +1,4 @@
-package org.kolbasa.event.service.app.api.auth.mapper;
+package org.kolbasa.event.service.adapter.http.controller.mapper;
 
 import org.kolbasa.event.service.adapter.http.dto.RegisterRequestDto;
 import org.kolbasa.event.service.domain.Employee;
