@@ -9,12 +9,12 @@ pipeline {
         }
         stage('Build') {
             steps {
-                bat 'mvn clean package'
+                bat 'gradlew.bat build'
             }
         }
         stage('Test') {
             steps {
-                bat 'mvn test'
+                bat 'gradlew.bat test'
             }
         }
     }
