@@ -6,7 +6,7 @@ import org.kolbasa.event.service.app.api.event.dto.ResponseEventDto;
 import org.kolbasa.event.service.app.api.event.mapper.EventMapper;
 import org.kolbasa.event.service.app.api.repository.EventRepository;
 import org.kolbasa.event.service.domain.Event;
-import org.kolbasa.event.service.domain.exception.EventNotFoundException;
+import org.kolbasa.event.service.app.impl.exception.EventNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service

@@ -12,7 +12,7 @@ import org.kolbasa.event.service.app.api.event.CreateEventInbound;
 import org.kolbasa.event.service.app.api.repository.EmployeeRepository;
 import org.kolbasa.event.service.app.api.repository.EventRepository;
 import org.kolbasa.event.service.app.api.spi.EventNotificationPublisher;
-import org.kolbasa.event.service.domain.exception.InvalidEventTimeException;
+import org.kolbasa.event.service.app.impl.exception.InvalidEventTimeException;
 import org.kolbasa.event.service.domain.Event;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

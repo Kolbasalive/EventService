@@ -8,7 +8,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.kolbasa.event.service.domain.exception.JsonSerializationException;
+import org.kolbasa.event.service.app.impl.exception.JsonSerializationException;
 
 import java.time.LocalDateTime;
 import java.util.List;

@@ -7,7 +7,7 @@ import org.kolbasa.event.service.app.api.review.dto.ResponseReviewDto;
 import org.kolbasa.event.service.app.api.review.mapper.ReviewMapper;
 import org.kolbasa.event.service.domain.Event;
 import org.kolbasa.event.service.domain.Review;
-import org.kolbasa.event.service.domain.exception.EventNotFoundException;
+import org.kolbasa.event.service.app.impl.exception.EventNotFoundException;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

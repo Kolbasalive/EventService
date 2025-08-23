@@ -7,7 +7,7 @@ import org.kolbasa.event.service.app.api.review.RefreshReviewInbound;
 import org.kolbasa.event.service.app.api.review.dto.ResponseReviewDto;
 import org.kolbasa.event.service.app.api.review.dto.ReviewDto;
 import org.kolbasa.event.service.domain.Review;
-import org.kolbasa.event.service.domain.exception.ReviewNotFoundException;
+import org.kolbasa.event.service.app.impl.exception.ReviewNotFoundException;
 import org.springframework.stereotype.Component;
 
 @Component

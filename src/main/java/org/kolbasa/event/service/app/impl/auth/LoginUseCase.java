@@ -6,8 +6,8 @@ import org.kolbasa.event.service.app.api.event.dto.TokenPair;
 import org.kolbasa.event.service.app.api.repository.EmployeeRepository;
 import org.kolbasa.event.service.app.api.repository.TokenRepository;
 import org.kolbasa.event.service.domain.Employee;
-import org.kolbasa.event.service.domain.exception.EmployeeNotFoundException;
-import org.kolbasa.event.service.domain.exception.InvalidPasswordException;
+import org.kolbasa.event.service.app.impl.exception.EmployeeNotFoundException;
+import org.kolbasa.event.service.app.impl.exception.InvalidPasswordException;
 import org.springframework.stereotype.Service;
 
 @Service

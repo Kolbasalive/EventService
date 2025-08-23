@@ -5,7 +5,7 @@ import org.kolbasa.event.service.app.api.event.DeleteEventInbound;
 import org.kolbasa.event.service.app.api.event.dto.ResponseDto;
 import org.kolbasa.event.service.app.api.repository.EventRepository;
 import org.kolbasa.event.service.domain.Event;
-import org.kolbasa.event.service.domain.exception.EventNotFoundException;
+import org.kolbasa.event.service.app.impl.exception.EventNotFoundException;
 import org.springframework.stereotype.Component;
 
 @Component

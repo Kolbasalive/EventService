@@ -4,7 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.kolbasa.event.service.app.api.auth.JwtTokenService;
 import org.kolbasa.event.service.app.api.event.dto.JwtEmployee;
 import org.kolbasa.event.service.domain.Employee;
-import org.kolbasa.event.service.domain.exception.JwtValidationException;
+import org.kolbasa.event.service.app.impl.exception.JwtValidationException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.core.userdetails.UserDetails;

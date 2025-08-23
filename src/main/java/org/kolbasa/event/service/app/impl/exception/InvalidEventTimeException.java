@@ -1,4 +1,4 @@
-package org.kolbasa.event.service.domain.exception;
+package org.kolbasa.event.service.app.impl.exception;
 
 import java.time.LocalDateTime;
 
