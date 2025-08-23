@@ -47,13 +47,13 @@ services:
       KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
 
-  minio:
-    image: minio/minio:latest
-    container_name: minio
-    ports:
-      - "9001:9001"
-      - "9002:9000"
-    environment:
-      MINIO_ROOT_USER: minioadmin
-      MINIO_ROOT_PASSWORD: minioadmin
-    command: server /data --console-address ":9001"
+#  minio:
+#    image: minio/minio:latest
+#    container_name: minio
+#    ports:
+#      - "9001:9001"
+#      - "9002:9000"
+#    environment:
+#      MINIO_ROOT_USER: minioadmin
+#      MINIO_ROOT_PASSWORD: minioadmin
+#    command: server /data --console-address ":9001"
