@@ -46,5 +46,5 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: |
-            ghcr.io/${{ github.repository_owner.toLower() }}/eventservice:latest
-            ghcr.io/${{ github.repository_owner.toLower() }}/eventservice:${{ github.sha }}
+            ghcr.io/kolbasalive/eventservice:latest
+            ghcr.io/kolbasalive/eventservice:${{ github.sha }}
