@@ -1,17 +1,6 @@
+version: '3.8'
+
 services:
-  eventservice:
-    image: ghcr.io/kolbasalive/eventservice:latest
-    container_name: eventservice
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://db1:5432/eventHub
-      SPRING_DATASOURCE_USERNAME: postgres
-      SPRING_DATASOURCE_PASSWORD: admin
-      KAFKA_BOOTSTRAP_SERVERS: kafka:9092
-    depends_on:
-      - db1
-      - kafka
-    ports:
-      - "8080:8080"
   db1:
     image: postgres:latest
     container_name: db-application
@@ -32,7 +21,7 @@ services:
       POSTGRES_PASSWORD: admin
       POSTGRES_DB: eventNotify
     volumes:
-      - ./data-vent-notify:/var/lib/postgresql/data
+      - ./data-event-notify:/var/lib/postgresql/data
     ports:
       - "5433:5432"
 
@@ -59,3 +48,17 @@ services:
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
       KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+
+  eventservice:
+    image: ghcr.io/kolbasalive/eventservice:latest
+    container_name: eventservice
+    depends_on:
+      - db1
+      - kafka
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db1:5432/eventHub
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: admin
+      KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+    ports:
+      - "8080:8080"
