@@ -65,3 +65,13 @@ services:
       DB_PASS: admin
     ports:
       - "8080:8080"
+
+  frontend:
+    image: ghcr.io/kolbasalive/eventhubfront:latest
+    container_name: frontend
+    depends_on:
+      - eventservice
+    environment:
+      - REACT_APP_API_URL=http://eventservice:8080
+    ports:
+      - "3000:80"
