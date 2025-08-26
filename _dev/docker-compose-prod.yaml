@@ -69,6 +69,7 @@ services:
   frontend:
     image: ghcr.io/kolbasalive/eventhubfront:latest
     container_name: frontend
+    pull_policy: always
     depends_on:
       - eventservice
     environment:
