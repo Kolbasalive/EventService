@@ -52,6 +52,7 @@ services:
   eventservice:
     image: ghcr.io/kolbasalive/eventservice:latest
     container_name: eventservice
+    pull_policy: always
     depends_on:
       - db1
       - kafka
