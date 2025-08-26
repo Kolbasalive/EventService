@@ -6,6 +6,7 @@ build/
 !**/src/test/**/build/
 _dev/data/
 _dev/TestDiagrams/
+_dev/.env
 
 ### STS ###
 .apt_generated
