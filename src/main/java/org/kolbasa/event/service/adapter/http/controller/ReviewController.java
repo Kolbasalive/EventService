@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestController("review")
+@RestController("api/review")
 @RequiredArgsConstructor
 public class ReviewController {
     private final CreateReviewInbound createReviewInbound;
