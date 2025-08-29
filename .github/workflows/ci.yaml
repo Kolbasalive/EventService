@@ -71,7 +71,7 @@ jobs:
           key: ${{ secrets.SERVER_SSH_KEY }}
           passphrase: ${{ secrets.SERVER_SSH_PASSPHRASE }}
           script: |
-            cd /opt/eventhub
+            cd /home/kolbasa/EventService
             git pull origin main || true
             docker compose -f docker-compose-prod.yaml pull
             docker compose -f docker-compose-prod.yaml up -d
