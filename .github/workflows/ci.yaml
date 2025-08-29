@@ -72,6 +72,6 @@ jobs:
           passphrase: ${{ secrets.SERVER_SSH_PASSPHRASE }}
           script: |
             cd /home/kolbasa/EventService
-            git pull origin main || true
-            docker compose -f docker-compose-prod.yaml pull
-            docker compose -f docker-compose-prod.yaml up -d
+            git pull origin master || true
+            docker-compose -f docker-compose-prod.yaml pull
+            docker-compose -f docker-compose-prod.yaml up -d
