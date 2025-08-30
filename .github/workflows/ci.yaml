@@ -73,5 +73,5 @@ jobs:
           script: |
             cd /home/kolbasa/EventService
             git pull origin master || true
-            docker-compose -f _dev/docker-compose-prod.yaml pull
-            docker-compose -f _dev/docker-compose-prod.yaml up -d
+            docker compose -f _dev/docker-compose-prod.yaml pull
+            docker compose -f _dev/docker-compose-prod.yaml up -d
