@@ -9,15 +9,18 @@ import org.springframework.security.config.annotation.web.configurers.AbstractHt
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
-@Profile("dev")
+@Profile("dev") // dev-профиль
 @EnableWebSecurity
 public class DevSecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
-                .authorizeHttpRequests(auth -> auth.anyRequest().permitAll()) // разрешаем всё
-                .csrf(AbstractHttpConfigurer::disable); // новый способ отключения CSRF
+                .csrf(AbstractHttpConfigurer::disable)
+                .authorizeHttpRequests(auth -> auth
+                        .requestMatchers("/actuator/prometheus").permitAll() // разрешаем Prometheus
+                        .anyRequest().permitAll() // остальные эндпоинты тоже разрешены для dev
+                );
         return http.build();
     }
 }

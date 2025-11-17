@@ -54,11 +54,10 @@ management:
   endpoints:
     web:
       exposure:
-        include: "*"
+        include: health,info,prometheus
   metrics:
     enable:
-      jvm: true
-      process: true
+      all: true
   endpoint:
     health:
       show-details: always
