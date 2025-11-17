@@ -37,6 +37,10 @@ public class Event {
     private Integer maxUserSize;
     private LocalDateTime eventDate;
     private Long organizationId;
+    private String mainPhotoUrl;
+
+    @OneToMany(mappedBy = "event", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<EventPhoto> photoUrls;
 
     @OneToMany(mappedBy = "event", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Review> reviews;

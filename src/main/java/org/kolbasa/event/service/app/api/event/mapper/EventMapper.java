@@ -17,6 +17,8 @@ public interface EventMapper {
     @Mapping(source = "eventId", target = "response")
     ResponseDto eventToResponseDto(Event event);
     EventDto eventDtoToEvent(Event event);
+    @Mapping(target = "mainPhotoUrl", ignore = true)
+    @Mapping(target = "photoUrls", ignore = true)
     ResponseEventDto eventToResponseEventDto(Event event);
     @Mapping(source = "employees", target = "employees")
     EventNotificationMessage eventAndEmployeesToEventNotificationMessage(Event event, List<EmployeeDetails> employees);

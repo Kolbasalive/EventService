@@ -17,5 +17,7 @@ public class ResponseEventDto {
     private Integer maxUserSize;
     private LocalDateTime eventDate;
     private Long organizationId;
+    private String mainPhotoUrl;
+    private List<String> photoUrls;
     private List<Review> reviews;
 }
