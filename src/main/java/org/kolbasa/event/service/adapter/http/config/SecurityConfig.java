@@ -18,7 +18,7 @@ import java.util.List;
 
 @Configuration
 @EnableWebSecurity
-@Profile("prod")
+@Profile({"prod", "qa"})
 @RequiredArgsConstructor
 public class SecurityConfig {
     private final JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;
@@ -34,10 +34,11 @@ public class SecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(
-                                "/api/auth/**",
+                                 "/api/auth/**",
                                 "/swagger-ui/**",
                                 "/v3/api-docs/**",
-                                "/swagger-ui.html"
+                                "/swagger-ui.html",
+                                "/actuator/**"
                         ).permitAll()
                         //.anyRequest().permitAll()
                         .anyRequest().authenticated()
@@ -46,18 +47,6 @@ public class SecurityConfig {
 
         return http.build();
     }
-
-
-/*    @Bean
-    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http
-                .csrf(AbstractHttpConfigurer::disable)
-                .authorizeHttpRequests(auth -> auth
-                        .anyRequest().permitAll()
-                );
-
-        return http.build();
-    }*/
 
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
@@ -71,20 +60,4 @@ public class SecurityConfig {
         source.registerCorsConfiguration("/**", configuration);
         return source;
     }
-
-/*    @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http
-                .securityMatcher("/**") // применяем фильтры ко всем запросам
-                .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/auth/**").permitAll() // разрешаем доступ к /auth/**
-                        .anyRequest().authenticated()
-                )
-                .csrf(AbstractHttpConfigurer::disable) // CSRF выключаем явно
-                .logout(AbstractHttpConfigurer::disable) // если не используете logout
-                .formLogin(Customizer.withDefaults()) // можно убрать или заменить
-                .httpBasic(Customizer.withDefaults()); // можно убрать, если не нужен basic auth
-
-        return http.build();
-    }*/
 }

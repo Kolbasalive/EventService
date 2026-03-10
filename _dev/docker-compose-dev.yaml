@@ -57,23 +57,20 @@ services:
       - ./minio_data:/data
     networks:
       - eventhub-net
-
+  db2:
+    image: postgres:latest
+    container_name: db-event-notify
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: eventNotify
+    volumes:
+      - ./data-event-notify:/var/lib/postgresql/data
+    ports:
+      - "5434:5432"
+    networks:
+      - eventhub-net
 
 networks:
   eventhub-net:
     driver: bridge
-
-
-#  db2:
-#    image: postgres:latest
-#    container_name: db-event-notify
-#    environment:
-#      POSTGRES_USER: postgres
-#      POSTGRES_PASSWORD: admin
-#      POSTGRES_DB: eventNotify
-#    volumes:
-#      - ./data-event-notify:/var/lib/postgresql/data
-#    ports:
-#      - "5433:5432"
-#    networks:
-#      - eventhub-net
