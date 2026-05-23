@@ -1,6 +1,8 @@
 spring:
   application:
     name: "EventHub"
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:dev}
   web:
     resources:
       chain:
@@ -54,6 +56,11 @@ app:
   kafka:
     topic:
       events: new-events-topic
+  jwt:
+    access-secret: ${JWT_ACCESS_SECRET:superSecretKeyWhichShouldBeVeryLongLONGLONGLONGLONG}
+    refresh-secret: ${JWT_REFRESH_SECRET:verySuperSecretKeyWhichShouldBeVeryLongLONGLONGLONGLONG}
+    access-validity-ms: 900000
+    refresh-validity-ms: 604800000
 
 management:
   endpoints:

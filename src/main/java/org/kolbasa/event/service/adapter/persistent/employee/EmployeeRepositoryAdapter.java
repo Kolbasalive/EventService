@@ -24,6 +24,11 @@ public class EmployeeRepositoryAdapter implements EmployeeRepository {
     }
 
     @Override
+    public Optional<Employee> findById(Long employeeId) {
+        return repository.findById(employeeId);
+    }
+
+    @Override
     public List<Employee> findAll() {
         return repository.findAll();
     }
