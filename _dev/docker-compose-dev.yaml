@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   db1:
-    image: postgres:latest
+    image: postgres:17.3
     container_name: db-application
     environment:
       POSTGRES_USER: postgres
@@ -58,7 +58,7 @@ services:
     networks:
       - eventhub-net
   db2:
-    image: postgres:latest
+    image: postgres:17.3
     container_name: db-event-notify
     environment:
       POSTGRES_USER: postgres

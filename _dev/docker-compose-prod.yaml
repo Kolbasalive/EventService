@@ -16,7 +16,7 @@ services:
       - eventhub-net
 
   db2:
-    image: postgres:latest
+    image: postgres:17.3
     container_name: db-event-notify
     environment:
       POSTGRES_USER: postgres

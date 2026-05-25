@@ -47,6 +47,8 @@ export default function () {
         auth_param
     );
 
+    res_event_all.response
+
     check(
         res_event_all,
         {
